@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import Count from "./count";
 import Cost from "./cost";
+import Grid from "@material-ui/core/Grid";
 
 class CounterContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: 4,
       totalCost: 0,
       costPerUnit: (175.5).toFixed(2)
     };
   }
 
   componentDidMount() {
-    this.setState({
-      count: 4
-    });
     this.updateTotalCost();
   }
 
@@ -23,7 +21,7 @@ class CounterContainer extends Component {
     console.log(this.state);
     const { count, costPerUnit } = this.state;
 
-    if (Number(count) !== count || (count * costPerUnit) % 1 !== 0) {
+    if (!Number(count) && count !== "" && count !== 0) {
       window.alert("Count must be an Integer");
       this.setState({
         count: 1,
@@ -45,7 +43,7 @@ class CounterContainer extends Component {
   };
 
   subtractFromCount = () => {
-    if (this.state.count > 0) {
+    if (this.state.count > 1) {
       this.setState({
         count: this.state.count - 1
       });
@@ -65,16 +63,22 @@ class CounterContainer extends Component {
   render() {
     const { count, totalCost, costPerUnit } = this.state;
     return (
-      <div>
-        <Cost title={"COST PER UNIT"} cost={costPerUnit} />
-        <Count
-          count={count}
-          changeHandler={this.changeHandler}
-          subtractFromCount={this.subtractFromCount}
-          addToCount={this.addToCount}
-        />
-        <Cost title={"TOTAL COST"} cost={totalCost} />
-      </div>
+      <Grid container spacing={0}>
+        <Grid item xs>
+          <Cost title={"COST PER UNIT"} cost={costPerUnit} />
+        </Grid>
+        <Grid item xs>
+          <Count
+            count={count}
+            changeHandler={this.changeHandler}
+            subtractFromCount={this.subtractFromCount}
+            addToCount={this.addToCount}
+          />
+        </Grid>
+        <Grid item xs>
+          <Cost title={"TOTAL COST"} cost={totalCost} />
+        </Grid>
+      </Grid>
     );
   }
 }
