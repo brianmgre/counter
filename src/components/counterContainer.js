@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Count from "./count";
+import Cost from "./cost";
 
 class CounterContainer extends Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class CounterContainer extends Component {
     console.log(this.state);
     const { count, costPerUnit } = this.state;
 
-    if (Number(count) !== count) {
+    if (Number(count) !== count || (count * costPerUnit) % 1 !== 0) {
       window.alert("Count must be an Integer");
       this.setState({
         count: 1,
@@ -64,8 +66,14 @@ class CounterContainer extends Component {
     const { count, totalCost, costPerUnit } = this.state;
     return (
       <div>
-        heyo
-        {count},{totalCost},{costPerUnit},
+        <Cost title={"COST PER UNIT"} cost={costPerUnit} />
+        <Count
+          count={count}
+          changeHandler={this.changeHandler}
+          subtractFromCount={this.subtractFromCount}
+          addToCount={this.addToCount}
+        />
+        <Cost title={"TOTAL COST"} cost={totalCost} />
       </div>
     );
   }
