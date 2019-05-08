@@ -22,7 +22,7 @@ class CounterContainer extends Component {
     const { count, costPerUnit } = this.state;
 
     if (!Number(count) && count !== "" && count !== 0) {
-      window.alert("Count must be an Integer");
+      window.alert("# of Units must be an Integer");
       this.setState({
         count: 1,
         totalCost: (1 * costPerUnit).toFixed(2)
