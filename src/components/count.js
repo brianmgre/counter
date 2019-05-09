@@ -4,11 +4,15 @@ import Icon from "@material-ui/core/Icon";
 
 const Count = props => {
   const { count, changeHandler, subtractFromCount, addToCount } = props;
+
+  const submitHandler = event => {
+    event.preventDefault();
+  };
   const { classes } = props;
   return (
     <div>
       <Icon onClick={addToCount}>add_circle_outline</Icon>
-      <form>
+      <form onSubmit={submitHandler} type="submit">
         <Typography variant="title"># OF UNITS</Typography>
         <TextField name="count" value={count} onChange={changeHandler} />
       </form>
