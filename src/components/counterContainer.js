@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import Count from "./count";
 import Cost from "./cost";
-import Grid from "@material-ui/core/Grid";
+
+import { styles } from "./styles/containerStyles";
+import { withStyles } from "@material-ui/core";
 
 class CounterContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: Math.floor(4),
+      count: 4,
       totalCost: 0,
       costPerUnit: (175.5).toFixed(2)
     };
@@ -70,25 +72,28 @@ class CounterContainer extends Component {
 
   render() {
     const { count, totalCost, costPerUnit } = this.state;
+    const { classes } = this.props;
     return (
-      <Grid container spacing={0}>
-        <Grid item xs>
-          <Cost title={"COST PER UNIT"} cost={costPerUnit} />
-        </Grid>
-        <Grid item xs>
-          <Count
-            count={count}
-            changeHandler={this.changeHandler}
-            subtractFromCount={this.subtractFromCount}
-            addToCount={this.addToCount}
-          />
-        </Grid>
-        <Grid item xs>
-          <Cost title={"TOTAL COST"} cost={totalCost} />
-        </Grid>
-      </Grid>
+      <div className={classes.totalContainer}>
+        <div className={classes.grid}>
+          <div className={classes.costPer}>
+            <Cost title={"COST PER UNIT"} cost={costPerUnit} />
+          </div>
+          <div>
+            <Count
+              count={count}
+              changeHandler={this.changeHandler}
+              subtractFromCount={this.subtractFromCount}
+              addToCount={this.addToCount}
+            />
+          </div>
+          <div className={classes.totalCost}>
+            <Cost title={"TOTAL COST"} cost={totalCost} />
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-export default CounterContainer;
+export default withStyles(styles)(CounterContainer);
