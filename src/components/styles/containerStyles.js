@@ -6,14 +6,17 @@ export const styles = theme => ({
     maxWidth: 1200,
     border: "1px solid blue",
     height: "100vh",
-    backgroundColor: "#E0F4F4"
+    backgroundColor: "#E0F4F4",
+    justifyContent: "center"
   },
 
   totalContainer: {
     border: "1px solid red",
-    width: "100%",
+    width: "680px",
     margin: "50px",
-    padding: 20
+    padding: 20,
+    margin: "163px",
+    padding: "140px 40px"
   },
 
   grid: {
@@ -22,7 +25,8 @@ export const styles = theme => ({
     border: "1px solid orange",
     textAlign: "center",
     justifyContent: "space-between",
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    padding: "62px 0"
   },
 
   costContainer: {
@@ -37,7 +41,11 @@ export const styles = theme => ({
 
   title: {
     fontSize: 14,
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    fontWeight: "bold",
+    textAlign: "left",
+    paddingLeft: 8,
+    marginTop: 10
   },
 
   costPer: {
@@ -50,16 +58,20 @@ export const styles = theme => ({
 
   cost: {
     fontSize: 30,
-    color: "white"
+    color: "white",
+    textAlign: "left",
+    paddingLeft: 7
   },
 
   unitForm: {
-    padding: "0 20px"
+    padding: "0 18px",
+    marginTop: "5px"
   },
 
   unitTitle: {
     color: "#819B9B",
-    fontSize: 14
+    fontSize: 14,
+    fontWeight: "bold"
   },
 
   input: {
@@ -69,6 +81,7 @@ export const styles = theme => ({
 
   addSubtract: {
     color: "#819B9B",
+    fontSize: "40px",
     "&:hover": {
       cursor: "pointer"
     }
@@ -77,6 +90,6 @@ export const styles = theme => ({
   resize: {
     fontSize: "20px",
     textAlign: "center",
-    padding: "0"
+    padding: "6px"
   }
 });
