@@ -7,7 +7,7 @@ class CounterContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 4,
+      count: Math.floor(4),
       totalCost: 0,
       costPerUnit: (175.5).toFixed(2)
     };
@@ -17,17 +17,19 @@ class CounterContainer extends Component {
     this.updateTotalCost();
   }
 
+  checkCount = () => {
+    return /^[0-9]+$/i.test(this.state.count);
+  };
+
   updateTotalCost = () => {
-    console.log(this.state);
     const { count, costPerUnit } = this.state;
 
-    if (!Number(count) && count !== "" && count !== 0) {
+    if (!this.checkCount() && count !== "") {
       window.alert("# of Units must be an Integer");
       this.setState({
-        count: 1,
-        totalCost: (1 * costPerUnit).toFixed(2)
+        count: 1
       });
-    } else if ((count * costPerUnit) % 1 === 0) {
+    } else if (count % 2 === 0) {
       this.setState({ totalCost: count * costPerUnit });
     } else {
       this.setState({
@@ -37,9 +39,15 @@ class CounterContainer extends Component {
   };
 
   addToCount = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
+    if (this.state.count === "0" || this.state.count === "") {
+      this.setState({
+        count: 1
+      });
+    } else {
+      this.setState({
+        count: this.state.count + 1
+      });
+    }
   };
 
   subtractFromCount = () => {
