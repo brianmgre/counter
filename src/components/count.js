@@ -18,7 +18,12 @@ const Count = props => {
         # OF UNITS
       </Typography>
       <div className={classes.inputFormAddSub}>
-        <Icon onClick={addToCount} className={classes.addSubtract}>
+        <Icon
+          onClick={addToCount}
+          className={classes.addSubtract}
+          data-testid="add-Btn"
+          id="addSubtract"
+        >
           add_circle_outline
         </Icon>
         <form
@@ -40,7 +45,11 @@ const Count = props => {
             }}
           />
         </form>
-        <Icon onClick={subtractFromCount} className={classes.addSubtract}>
+        <Icon
+          onClick={subtractFromCount}
+          id="subtract"
+          className={classes.addSubtract}
+        >
           remove_circle_outline
         </Icon>
       </div>
