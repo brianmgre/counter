@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { TextField, Typography } from "@material-ui/core";
 import Icon from "@material-ui/core/Icon";
 import { styles } from "./styles/containerStyles";
@@ -34,8 +35,7 @@ const Count = props => {
             className={classes.input}
             InputProps={{
               classes: {
-                input: classes.resize,
-                textAlign: "center"
+                input: classes.resize
               }
             }}
           />
@@ -46,6 +46,13 @@ const Count = props => {
       </div>
     </div>
   );
+};
+
+Count.propTypes = {
+  count: PropTypes.number,
+  changeHandler: PropTypes.func,
+  subtractFromCount: PropTypes.func,
+  addToCount: PropTypes.func
 };
 
 export default withStyles(styles)(Count);

@@ -4,25 +4,21 @@ export const styles = theme => ({
     alignItems: "center",
     margin: "auto auto",
     maxWidth: 1200,
-    border: "1px solid blue",
     height: "100vh",
-    backgroundColor: "#E0F4F4",
+    backgroundColor: "#0E0E0E",
     justifyContent: "center"
   },
 
   totalContainer: {
-    border: "1px solid red",
     width: "680px",
-    margin: "50px",
-    padding: 20,
     margin: "163px",
-    padding: "140px 40px"
+    padding: "140px 40px",
+    backgroundColor: "#e0f4f4"
   },
 
   grid: {
     display: "flex",
     alignItems: "center",
-    border: "1px solid orange",
     textAlign: "center",
     justifyContent: "space-between",
     backgroundColor: theme.palette.primary.main,
