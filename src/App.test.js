@@ -29,17 +29,6 @@ describe("<Cost />", () => {
   });
 });
 
-// describe("<Count />", () => {
-//   it("should call add unit as prop", () => {
-//     const addToCount = jest.fn();
-
-//     const { getByTestId } = render(<Count addToCount={addToCount} />);
-//     fireEvent.click(getByTestId(/add-Btn/i));
-
-//     expect(addToCount).toBeCalled();
-//   });
-// });
-
 describe("<Count />", () => {
   let wrapper;
   beforeEach(() => {
