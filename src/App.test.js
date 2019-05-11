@@ -4,12 +4,11 @@ import Cost from "./components/cost";
 import Count from "./components/count";
 import { render, fireEvent } from "react-testing-library";
 import "jest-dom/extend-expect";
-import Enzyme, { shallow, render as banana, mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-// // React 16 Enzyme adapter
-Enzyme.configure({ adapter: new Adapter() });
 import Icon from "@material-ui/core/Icon";
 import { TextField, Typography } from "@material-ui/core";
+import Enzyme, { shallow, render as banana, mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+Enzyme.configure({ adapter: new Adapter() });
 
 describe("<App />", () => {
   it("renders without crashing", () => {
