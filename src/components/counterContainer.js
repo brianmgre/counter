@@ -47,7 +47,7 @@ class CounterContainer extends Component {
       });
     } else {
       this.setState({
-        count: this.state.count + 1
+        count: Number(this.state.count) + 1
       });
     }
   };
