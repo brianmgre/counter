@@ -1,4 +1,4 @@
-##Counter
+###Counter
 
 This application was created with Yarn. So if you fork and clone the repo, use Yarn install to add the dependencies and Yarn start to start the application.
 
