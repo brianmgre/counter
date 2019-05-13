@@ -1,17 +1,20 @@
-##Counter
+## Counter
 
 This application was created with Yarn. So if you fork and clone the repo, use Yarn install to add the dependencies and Yarn start to start the application.
 
 Tech Stack:
 
-React,
-Material-UI
-HTML
-CSS
+<ul>
+<li> React </li>
+<li> Material-UI </li>
+<li> HTML </li>
+<li> CSS </li>
+</ul>
 
 Testing:
-Jest
-Enzyme
-React-testing-library
-
+<ul>
+  <li>Jest</li>
+<li>Enzyme</li>
+<li>React-testing-library</li>
+</ul>
 You can see the live site here: https://counter-units.netlify.com/
