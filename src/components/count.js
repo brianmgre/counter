@@ -58,7 +58,7 @@ const Count = props => {
 };
 
 Count.propTypes = {
-  count: PropTypes.number,
+  count: PropTypes.string,
   changeHandler: PropTypes.func,
   subtractFromCount: PropTypes.func,
   addToCount: PropTypes.func
