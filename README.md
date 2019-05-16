@@ -15,6 +15,6 @@ Testing:
 <ul>
   <li>Jest</li>
 <li>Enzyme</li>
-<li>React-testing-library</li>
+
 </ul>
 You can see the live site here: https://counter-units.netlify.com/
